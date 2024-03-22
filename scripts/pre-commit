@@ -1,0 +1,18 @@
+#!/bin/sh
+
+echo "*** Running Unit Tests ***"
+
+stash_commit="$(git stash create)"
+git reset hard
+
+./gradlew test
+
+status=$?
+
+if [[ -n "${stash_commit}" ]]
+then git stash apply "${stash_commit}"
+fi
+
+echo "*** Finished with unit Tests ***"
+
+exit $status
