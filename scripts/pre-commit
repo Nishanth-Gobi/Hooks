@@ -3,7 +3,7 @@
 echo "*** Running Unit Tests ***"
 
 stash_commit="$(git stash create)"
-git reset hard
+git reset --hard
 
 ./gradlew test
 

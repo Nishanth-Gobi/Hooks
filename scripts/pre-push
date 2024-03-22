@@ -1,0 +1,10 @@
+#!/bin/sh
+
+echo "*** Running Unit Tests ***"
+
+./gradlew test
+status=$?
+
+echo "*** Finished with unit Tests ***"
+
+exit $status
